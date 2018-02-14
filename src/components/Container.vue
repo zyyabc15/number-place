@@ -19,7 +19,7 @@
 <script>
 import Header from './Header'
 import Point from './Point'
-import MyButton from './Mybutton'
+import MyButton from './MyButton'
 export default {
   components: {
     header1: Header,

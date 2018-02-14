@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import MyButton from './Mybutton'
+import MyButton from './MyButton'
 export default {
   methods: {
     refresh() {
