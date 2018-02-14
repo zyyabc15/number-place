@@ -1,8 +1,14 @@
 <template>
-  <div>
-    <div>{{$store.state.time}}</div>
-    <mybutton value="refresh"></mybutton>
-    <div>{{$store.state.steps}}</div>
+  <div class="row">
+    <div class="col-md-2 col-xs-2"></div>
+    <div class="col-md-6 col-xs-8 item_head">
+      <p>
+        <span>{{$store.state.time}}</span>
+        <mybutton value="refresh"></mybutton>
+        <span>{{$store.state.steps}}</span>
+      </p>
+    </div> 
+    <div class="col-md-2 col-xs-2"></div>
   </div>
 </template>
 <script>
@@ -21,4 +27,12 @@ export default {
   }
 }
 </script>
+<style>
+.item_head {
+  text-align: center;
+  margin: auto;
+  font-size: 22px;
+}
+</style>
+
 

@@ -1,5 +1,7 @@
 <template>
-    <button @click='refresh'>{{value}}</button>
+    <button @click='refresh' class="btn btn-outline btn-primary">
+      {{value}}
+    </button>
 </template>
 <script>
 export default {
@@ -13,3 +15,9 @@ export default {
   }
 }
 </script>
+<style>
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+}
+</style>
