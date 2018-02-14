@@ -1,28 +1,30 @@
 <template>
-  <div class="container">
-    <form class="form-signin">
-      <h2>
-        {{this.$store.state.home}}
-      </h2>
-      <label for="inputEmail">邮件地址</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="邮件地址" required autofocus>
-      <label for="inputPassword" class="sr-only">密码</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value="remember-me">记住我
-        </label>
+  <div>
+    <header1></header1>
+    <div>
+      <template v-for="i in [0,1,2,3]">
+        <div :key=i>
+          <point :value=value :x=index :y=i :key=value v-for="(value,index) in $store.state.init.filter((v,k)=>{return Math.floor(k/4)==i})">
+          </point>
+        </div>
+      </template>
+      <div v-if="$store.state.sucess">
+        <h3>SUCESS!!</h3>
+        <mybutton value="restart"></mybutton>
+
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" v-on:click="reverseMessage">登录</button>
-    </form>
+    </div>
   </div>
 </template>
 <script>
+import Header from './Header'
+import Point from './Point'
+import MyButton from './Mybutton'
 export default {
-  data() {
-    return {
-      title: '登录结缘'
-    }
+  components: {
+    header1: Header,
+    point: Point,
+    mybutton: MyButton
   },
   computed: {
     home() {
@@ -36,10 +38,17 @@ export default {
     reverseMessage() {
       console.log(this)
     }
-
   },
   created() {
-    console.log(this.$store)
+    this.$store.commit('init')
   }
 }
 </script>
+<style>
+span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+</style>
+

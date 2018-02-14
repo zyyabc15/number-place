@@ -1,42 +1,53 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import fn from './fn'
 Vue.use(Vuex)
 // 需要维护的状态
 // 初始化 state
 const state = {
-  home: true,
-  my: false,
-  data: ''
+  timer: 0,
+  steps: 0,
+  init: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  time: 0,
+  begin: false,
+  sucsess: false
 }
 // 初始化 mutations
 const mutations = {
-  IN_HOME(state) {
-    state.home = true
-    state.my = false
+  init(state) {
+    this.state.init = fn.shuffle(this.state.init)
   },
-  IN_MY(state) {
-    state.home = false
-    state.my = true
+  refresh(state) {
+    this.state.timer = fn.clear(state)
+    this.state.steps = 0
+    this.state.time = 0
+    this.state.init = fn.shuffle(this.state.init)
+    this.state.begin = false
+    this.state.sucsess = false
   },
-  IN_OTHER(state) {
-    state.home = false
-    state.my = false
-    console.log(222)
+  clear() {
+    fn.clear(state)
+  },
+  clickPoint(state, p) {
+    const index = fn.getBlankIndex(p.x, p.y, this.state.init)
+    const index1 = fn.getIndex(p.x, p.y)
+    if (index === -1) {
+      return -1
+    } else {
+      if (!this.state.begin) {
+        this.state.timer = fn.start(this.state)
+        this.state.begin = true
+      }
+      this.state.steps++
+      this.state.init = fn.exchangePoints(index, index1, this.state.init)
+      Vue.set(this.state.init, 0, this.state.init[0])
+      this.state.sucsess = fn.checkSucess(this.state)
+    }
+    // console.log(this.state.init)
   }
 }
-// 初始化 actions
-const actions = {
-  inHome({ commit }) {
-    commit('IN_HOME')
-  },
-  inMy({ commit }) {
-    commit('IN_MY')
-  },
-  inOther({ commit }) {
-    commit('IN_OTHER')
-  }
-}
+
 export default new Vuex.Store({
   state,
-  mutations, actions
+  mutations
 })
