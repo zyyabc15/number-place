@@ -1,8 +1,8 @@
 <template>
     <div :class="[value===16? 'disnone': '','grid']" @click='click({x:x,y:y})'>
-      <div class="title">
-        {{value}}
-      </div>
+        <div class="title">
+            {{value}}
+        </div>
     </div>
 </template>
 <script>
@@ -22,65 +22,64 @@ export default {
 <style>
 @import '../assets/css/font.css';
 @media (max-width: 1600px) {
-    .wrap .grid {
-        width: 24%;
-        height: 24%;
-        max-height: 126px;
-        max-width: 126px;
-        margin-left: 4px;
-        margin-top: 3px;
-        margin-bottom: 4px;
-        margin-right: 2px;
-    }
+  .wrap .grid {
+    width: 24%;
+    height: 24%;
+    max-height: 126px;
+    max-width: 126px;
+    margin-left: 4px;
+    margin-top: 3px;
+    margin-bottom: 4px;
+    margin-right: 2px;
+  }
 }
 @media (max-width: 1100px) {
-    .wrap .grid {
-        width: 23%;
-        height: 23%;
-        max-height: 126px;
-        max-width: 126px;
-        margin-left: 5px;
-        margin-top: 3px;
-        margin-bottom: 4px;
-        margin-right: 3px;
-    }
+  .wrap .grid {
+    width: 23%;
+    height: 23%;
+    max-height: 126px;
+    max-width: 126px;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-bottom: 4px;
+    margin-right: 3px;
+  }
 }
 @media (max-width: 900px) {
-    .wrap .grid {
-        width: 23%;
-        height: 23%;
-        margin-left: 5px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        margin-right: 2px;
-    }
+  .wrap .grid {
+    width: 23%;
+    height: 23%;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 2px;
+  }
 }
-@media (max-width: 600px){
-    .wrap .grid {
-        width: 23%;
-        height: 23%;
-        margin-left: 4px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        margin-right: 2px;
-    }
+@media (max-width: 600px) {
+  .wrap .grid {
+    width: 23%;
+    height: 23%;
+    margin-left: 4px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 2px;
+  }
 }
 @media (max-width: 400px) {
-    .wrap .grid {
-        width: 23%;
-        height: 23%;
-        max-height: 87px;
-    }
+  .wrap .grid {
+    width: 23%;
+    height: 23%;
+    max-height: 87px;
+  }
 }
 .wrap .grid {
-    background-color: #99CCFF;
-    border-radius: 8px;
-    float: left;
-    /* padding: 2px; */
-    position: relative;
-    box-shadow: inset 0px 0px 0px #fff, 
-                2px 2px 0px 0px #63b8f5, 
-                5px 5px 2px #f0f0f0;
+  background-color: #99ccff;
+  border-radius: 8px;
+  float: left;
+  /* padding: 2px; */
+  position: relative;
+  box-shadow: inset 0px 0px 0px #fff, 2px 2px 0px 0px #63b8f5,
+    5px 5px 2px #f0f0f0;
 }
 .wrap .grid .title {
   font-family: 'Kavivanar', cursive;
@@ -94,6 +93,6 @@ export default {
   transform: translate(-50%, -50%);
 }
 .disnone {
-    visibility: hidden;
+  visibility: hidden;
 }
 </style>

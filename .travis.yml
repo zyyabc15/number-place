@@ -7,6 +7,6 @@ cache:
 install:
   - yarn
 script:
-  - yarn run prod
+  - yarn run build
 after_script:
   - yarn run deploy 
