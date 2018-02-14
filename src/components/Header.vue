@@ -7,7 +7,7 @@
         <mybutton value="refresh"></mybutton>
         <span>{{$store.state.steps}}</span>
       </p>
-    </div> 
+    </div>
     <div class="col-md-2 col-xs-2"></div>
   </div>
 </template>
@@ -34,5 +34,3 @@ export default {
   font-size: 22px;
 }
 </style>
-
-
