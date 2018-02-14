@@ -15,6 +15,7 @@
     "deploy": "gh-pages-with-token -d dist"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "gh-pages-with-token": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
