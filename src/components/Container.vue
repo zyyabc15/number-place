@@ -12,11 +12,13 @@
         </template>
       </div> 
       <div class="col-md-2 col-xs-1"></div>
-      <div v-if="$store.state.sucess">
+      <!-- <div v-if="$store.state.sucess==true">
         <h3>SUCESS!!</h3>
         <mybutton value="restart"></mybutton>
-
-      </div>
+      </div> -->
+      <div v-if="$store.state.sucsess==true">
+        <Model ></Model>
+      </div>     
     </div>
   </div>
 </template>
@@ -24,11 +26,13 @@
 import Header from './Header'
 import Point from './Point'
 import MyButton from './Mybutton'
+import Model from './Model'
 export default {
   components: {
     header1: Header,
     point: Point,
-    mybutton: MyButton
+    mybutton: MyButton,
+    Model: Model
   },
   computed: {
     home() {
