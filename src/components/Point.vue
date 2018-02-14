@@ -1,6 +1,6 @@
 <template>
-    <div class="grid" @click='click({x:x,y:y})'>
-      <div class="title" v-if='value !== 16'>
+    <div :class="[value===16? 'disnone': '','grid']" @click='click({x:x,y:y})'>
+      <div class="title">
         {{value}}
       </div>
     </div>
@@ -92,5 +92,8 @@ export default {
   margin-top: 50%;
   margin-left: 50%;
   transform: translate(-50%, -50%);
+}
+.disnone {
+    visibility: hidden;
 }
 </style>
