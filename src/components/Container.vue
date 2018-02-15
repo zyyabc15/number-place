@@ -17,15 +17,15 @@
         <mybutton value="restart"></mybutton>
       </div> -->
       <div v-if="$store.state.success==true">
-        <Model ></Model>
-      </div>     
+        <Model></Model>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import Header from './Header'
 import Point from './Point'
-import MyButton from './Mybutton'
+import MyButton from './MyButton'
 import Model from './Model'
 export default {
   components: {
