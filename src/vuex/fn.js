@@ -26,10 +26,9 @@ export default {
     let sample = arr.map(elem => {
       return elem
     })
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 1000; i++) {
       let neighbour = this.findNeighbourByIndex(blankIndex)
       let number = this.getRandomNumber(neighbour.length - 1)
-      console.log(number)
       let index = neighbour[number]
       this.exchangePoints(blankIndex, index, sample)
       blankIndex = index
