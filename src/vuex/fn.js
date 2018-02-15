@@ -22,7 +22,6 @@ export default {
     return sample
   },
   shuffle1(arr) {
-    debugger
     let blankIndex = 15
     let sample = arr.map(elem => {
       return elem
