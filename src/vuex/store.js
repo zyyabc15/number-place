@@ -10,12 +10,12 @@ const state = {
   init: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
   time: 0,
   begin: false,
-  success: true
+  success: false
 }
 // 初始化 mutations
 const mutations = {
   init(state) {
-    this.state.init = fn.shuffle(this.state.init)
+    this.state.init = fn.shuffle1(this.state.init)
   },
   refresh(state) {
     this.state.timer = fn.clear(state)

@@ -3,10 +3,10 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <p>太帅了</p>
+        <p>SUCCESS</p>
       </div>
       <div class="modal-footer">
-        <mybutton value="Again"></mybutton>
+        <mybutton value="Restart"></mybutton>
       </div>
     </div>
   </div>

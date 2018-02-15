@@ -1,7 +1,7 @@
 export default {
   getXY(index) {
     const x = index % 4
-    const y = index / 4
+    const y = Math.floor(index / 4)
     return { x: x, y: y }
   },
   getIndex(x, y) {
@@ -21,6 +21,22 @@ export default {
     }
     return sample
   },
+  shuffle1(arr) {
+    debugger
+    let blankIndex = 15
+    let sample = arr.map(elem => {
+      return elem
+    })
+    for (let i = 0; i < 100; i++) {
+      let neighbour = this.findNeighbourByIndex(blankIndex)
+      let number = this.getRandomNumber(neighbour.length - 1)
+      console.log(number)
+      let index = neighbour[number]
+      this.exchangePoints(blankIndex, index, sample)
+      blankIndex = index
+    }
+    return sample
+  },
   findNeighbour(x, y) {
     let result = []
     if (x - 1 >= 0) {
@@ -37,8 +53,14 @@ export default {
     }
     return result
   },
-  getRandomNumber(arr) {
-    return Math.floor(Math.random) * arr
+  findNeighbourByIndex(index) {
+    const p = this.getXY(index)
+    const x = p.x
+    const y = p.y
+    return this.findNeighbour(x, y)
+  },
+  getRandomNumber(number) {
+    return parseInt(Math.random() * (number - 0 + 1) + 0, 10)
   },
   getBlankIndex(x, y, init) {
     const neighbour = this.findNeighbour(x, y)
@@ -65,11 +87,11 @@ export default {
     return clearInterval(state.timer)
   },
   checkSuccess(arr) {
-      debugger
     for (let i = 0; i < arr.length; i++) {
-      if (arr[0] !== i + 1) {
+      if (arr[i] !== i + 1) {
         return false
       }
     }
+    return true
   }
 }
