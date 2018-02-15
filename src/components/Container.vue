@@ -16,7 +16,7 @@
         <h3>SUCESS!!</h3>
         <mybutton value="restart"></mybutton>
       </div> -->
-      <div v-if="$store.state.sucsess==true">
+      <div v-if="$store.state.success==true">
         <Model ></Model>
       </div>     
     </div>

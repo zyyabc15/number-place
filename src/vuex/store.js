@@ -10,7 +10,7 @@ const state = {
   init: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
   time: 0,
   begin: false,
-  sucsess: false
+  success: true
 }
 // 初始化 mutations
 const mutations = {
@@ -23,7 +23,7 @@ const mutations = {
     this.state.time = 0
     this.state.init = fn.shuffle(this.state.init)
     this.state.begin = false
-    this.state.sucsess = false
+    this.state.success = false
   },
   clear() {
     fn.clear(state)
@@ -41,7 +41,7 @@ const mutations = {
       this.state.steps++
       this.state.init = fn.exchangePoints(index, index1, this.state.init)
       Vue.set(this.state.init, 0, this.state.init[0])
-      this.state.sucsess = fn.checkSucess(this.state)
+      this.state.success = fn.checkSuccess(this.state.init)
     }
     // console.log(this.state.init)
   }

@@ -64,7 +64,8 @@ export default {
   clear(state) {
     return clearInterval(state.timer)
   },
-  checkSucess(arr) {
+  checkSuccess(arr) {
+      debugger
     for (let i = 0; i < arr.length; i++) {
       if (arr[0] !== i + 1) {
         return false
