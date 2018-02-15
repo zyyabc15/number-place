@@ -41,6 +41,10 @@ const mutations = {
       this.state.steps++
       this.state.init = fn.exchangePoints(index, index1, this.state.init)
       Vue.set(this.state.init, 0, this.state.init[0])
+      const success = fn.checkSuccess(this.state.init)
+      if (success) {
+        fn.clear(this.state)
+      }
       this.state.success = fn.checkSuccess(this.state.init)
     }
     // console.log(this.state.init)
